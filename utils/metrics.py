@@ -116,7 +116,7 @@ def plot_confusion_matrix(cm, title="Confusion Matrix"):
     plt.xlabel("Predicted Label")
     plt.ylabel("True Label")
 
-    plt.title(f"{title} for ResNet34", fontsize=16, y=1.05)
+    plt.title(f"{title}", fontsize=16, y=1.05)
     plt.xlabel("Predicted Label", fontsize=14, labelpad=15)
     plt.ylabel("True Label", fontsize=14, labelpad=15)
 
