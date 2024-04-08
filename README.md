@@ -100,3 +100,9 @@ To set up the environment and run the project, follow these steps:
 
 ## Conclusion
 This project demonstrates the practical application of machine learning and image processing techniques in the medical field, highlighting the importance and efficacy of these technologies in aiding the diagnosis of lung diseases.
+
+## Contact
+For inquiries or collaborations, feel free to reach out:
+
+- **Email:** jrzmonteiro@gmail.com
+- **LinkedIn:** [Juarez Monteiro](https://www.linkedin.com/in/juarez-monteiro/)
