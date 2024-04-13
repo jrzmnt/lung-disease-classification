@@ -3,6 +3,21 @@
 ## Overview
 This project aims to develop a machine learning model for classifying lung diseases using chest X-ray images. Leveraging a dataset provided by Kaggle, the model seeks to identify and differentiate various pulmonary conditions to aid in medical diagnosis.
 
+## Last Updates
+
+### April
+
+- **Model Implementation using TIMM**: integrated a model using the `timm` library, which is known for its comprehensive collection of pre-trained models and training scripts for deep learning.
+
+- **Streamlit Interface Creation**: To enhance user interaction and accessibility, I've developed a new interface using Streamlit. To access the interface you just need to ```streamlit run app.py```: <br/><br/>
+<div style="text-align: center;">
+    <img src="notebooks/images/streamlit-app.jpeg" width="400">
+</div>
+
+
+
+
+
 ## Dataset
 The dataset used is "Lung Disease" available on Kaggle, comprising chest X-ray images for identifying different lung diseases. Access the dataset directly [here](https://www.kaggle.com/datasets/fatemehmehrparvar/lung-disease).
 
