@@ -25,6 +25,7 @@ from models.mobile_net import get_mobile_net
 from models.shuffle_net import get_shuffle_net
 from models.resnet18 import get_resnet18
 from models.resnet34 import get_resnet34
+from models.timm_models import timm_efficient_net
 from utils.transformations import get_transforms
 from torch.utils.data import DataLoader
 from datasets.image_dataset import ImageDataset, prepare_datasets
@@ -64,6 +65,8 @@ def get_model(model_name, num_classes):
         return get_resnet18(num_classes)
     elif model_name == "resnet34":
         return get_resnet34(num_classes)
+    elif model_name == "efficient-net":
+        return timm_efficient_net(num_classes)
     else:
         raise ValueError("Invalid model name")
 
@@ -157,7 +160,7 @@ def train(model, train_loader, valid_loader, model_name):
         model.train()
         train_loss = 0.0
 
-        for inputs, labels in tqdm(
+        for inputs, labels, _ in tqdm(
             train_loader, desc=f"Epoch {epoch+1}/{num_epochs} [Train]"
         ):
             inputs = inputs.to(device)
@@ -176,7 +179,7 @@ def train(model, train_loader, valid_loader, model_name):
         total = 0
 
         with torch.no_grad():
-            for inputs, labels in tqdm(
+            for inputs, labels, _ in tqdm(
                 valid_loader, desc=f"Epoch {epoch+1}/{num_epochs} [Validation]"
             ):
                 inputs = inputs.to(device)
@@ -248,7 +251,7 @@ if __name__ == "__main__":
         "--model",
         type=str,
         required=True,
-        help="Model to train: simple-cnn, mobile-net, shuffle-net",
+        help="Model to train: simple-cnn, mobile-net, shuffle-net, resnet18, resnet34 and efficient-net",
     )
     args = parser.parse_args()
 

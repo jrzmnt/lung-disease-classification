@@ -24,6 +24,7 @@ from models.mobile_net import get_mobile_net
 from models.shuffle_net import get_shuffle_net
 from models.resnet18 import get_resnet18
 from models.resnet34 import get_resnet34
+from models.timm_models import timm_efficient_net
 from datasets.image_dataset import ImageDataset, prepare_datasets
 from utils.transformations import get_transforms
 from tqdm import tqdm
@@ -71,6 +72,9 @@ def load_model(model_name, num_classes):
     elif model_name == "resnet34":
         model = get_resnet34(num_classes)
         model.load_state_dict(torch.load("weights/resnet34.pth"))
+    elif model_name == "efficient-net":
+        model = timm_efficient_net(num_classes)
+        model.load_state_dict(torch.load("weights/efficient-net.pth"))
     else:
         raise ValueError("Invalid model name")
 
