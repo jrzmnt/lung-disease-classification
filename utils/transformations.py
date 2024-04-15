@@ -37,3 +37,27 @@ def get_transforms():
     )
 
     return transform
+
+
+def get_simple_transforms():
+    """
+    Defines a simple transformation.
+
+    Returns:
+        torchvision.transforms.Compose: A composition of data augmentation and normalization transforms.
+
+    Example:
+        transform = get_simple_transforms()
+    """
+    mean, std = [0.2860, 0.5660, 0.4400], [0.1837, 0.2486, 0.1257]
+
+    transform = transforms.Compose(
+        [
+            transforms.Resize(256),
+            transforms.CenterCrop(224),
+            transforms.ToTensor(),
+            transforms.Normalize(mean=mean, std=std),
+        ]
+    )
+
+    return transform
