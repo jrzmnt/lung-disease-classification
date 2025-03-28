@@ -1,0 +1,13 @@
+version: 2
+updates:
+  - package-ecosystem: "pip"
+    directory: "/" # requirements.txt está na raiz
+    schedule:
+      interval: "weekly"
+      day: "monday"
+      time: "08:00"
+      timezone: "America/Sao_Paulo"
+    open-pull-requests-limit: 5
+    ignore:
+      - dependency-name: "tornado"
+        update-types: ["version-update:semver-patch", "version-update:semver-minor"]
