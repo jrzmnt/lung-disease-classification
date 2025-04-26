@@ -1,4 +1,4 @@
-# Lung Disease Classification - Juarez Monteiro
+# Lung Disease Classification
 
 ## Overview
 This project aims to develop a machine learning model for classifying lung diseases using chest X-ray images. Leveraging a dataset provided by Kaggle, the model seeks to identify and differentiate various pulmonary conditions to aid in medical diagnosis.
